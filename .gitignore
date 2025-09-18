@@ -52,6 +52,6 @@
 /.web-server-pid
 
 # EnvFile
-.env
-.env.dev
-.env.local
+/.env
+/.env.dev
+/.env.local
