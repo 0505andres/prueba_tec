@@ -12,23 +12,39 @@ class BooksFixtures extends Fixture implements FixtureGroupInterface {
         // $product = new Product();
         // $manager->persist($product);
 
+        $books = [];
+
         $book1 = new \App\Entity\Book();
         $book1->setTitle("El Arte de Programar");
         $book1->setAuthor("Donald Knuth");
         $book1->setPublishedYear(1968);
         $manager->persist($book1);
+        $books[] = $book1;
 
         $book2 = new \App\Entity\Book();
         $book2->setTitle("Clean Code");
         $book2->setAuthor("Robert C. Martin");
         $book2->setPublishedYear(2008);
         $manager->persist($book2);
+        $books[] = $book2;
 
         $book3 = new \App\Entity\Book();
         $book3->setTitle("Refactoring");
         $book3->setAuthor("Martin Fowler");
         $book3->setPublishedYear(1999);
         $manager->persist($book3);
+        $books[] = $book3;
+
+        foreach ($books as $key => $book) {
+            for ($i = 0; $i < 3; $i++) {
+                $review = new \App\Entity\Review();
+                $review->setBook($book);
+                $review->setComment("Comentario inicial Libro $key");
+                $review->setRating(rand(1, 5));
+                $review->setCreatedAt(new \DateTime('now'));
+                $manager->persist($review);
+            }
+        }
 
         $manager->flush();
     }
