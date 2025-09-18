@@ -4,8 +4,9 @@ namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 
-class BooksFixtures extends Fixture {
+class BooksFixtures extends Fixture implements FixtureGroupInterface {
 
     public function load(ObjectManager $manager): void {
         // $product = new Product();
