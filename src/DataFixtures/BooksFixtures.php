@@ -33,6 +33,6 @@ class BooksFixtures extends Fixture {
     }
 
     public static function getGroups(): array {
-        return ['book_data'];
+        return ['books_data'];
     }
 }
