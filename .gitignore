@@ -54,3 +54,4 @@
 # EnvFile
 .env
 .env.dev
+.env.local
