@@ -1,6 +1,5 @@
 nelmio_cors:
     defaults:
-        origin: '*'
         allow_origin: ['*']
         allow_methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS']
         allow_headers: ['Content-Type', 'Authorization']
